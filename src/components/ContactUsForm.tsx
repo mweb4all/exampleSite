@@ -63,7 +63,7 @@ export const ContactUsForm = ({ sx }: ContactUsFormProps) => {
         ...sx,
       }}
     >
-      <Typography variant="h5" sx={{ mb: 2, textAlign: "center" }}>
+      <Typography variant="h5" sx={{ mb: 2, textAlign: "center", fontWeight: "bold" }}>
         Contact Us
       </Typography>
       <Formik

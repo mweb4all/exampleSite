@@ -21,6 +21,8 @@ import { ContactUsForm } from "./components/ContactUsForm";
 import { black, cream } from "./components/Colours";
 import { LinkButton } from "./components/LinkButton";
 import { useState, useEffect } from "react";
+import { TeamMembers } from "./components/TeamMembers";
+import { ReviewSection } from "./components/Reviews";
 // michael.web4all@gmail.com
 
 const welcomeMessage = "Welcome to Minster Hair & Beauty";
@@ -44,7 +46,7 @@ const infoParagraphs = [
 
 const socialLinks: SocialMediaProps["socialLinks"] = {
   facebook: "https://www.facebook.com",
-  twitter: "https://www.x.com",
+  x: "https://www.x.com",
   instagram: "https://www.instagram.com",
 };
 
@@ -59,11 +61,11 @@ const openingTimes = {
 };
 
 const pageTitle = "Minster Hair & Beauty";
-const secondaryTitle = "Town - York";
+const secondaryTitle = "York";
 
-const templateName = "exampleSite";
+export const templateName = "exampleSite";
 
-const mainBackgroundImage = `url(/${templateName}/hairbackground.jpg)`;
+const mainBackgroundImage = `url(/${templateName}/sampleBackground.jpg)`;
 
 const number = "01904 123123";
 
@@ -72,6 +74,26 @@ const googleMap =
 
 const shadowOffset = 2;
 
+const team = [
+  {
+    name: "Sophie Carter",
+    role: "Colour Specialist",
+    intro: "Sophie is known for her expert colouring techniques and attention to detail. She loves helping clients find their perfect shade.",
+    img: `/${templateName}/hairDresser1.jpg`,
+  },
+  {
+    name: "James Turner",
+    role: "Senior Stylist",
+    intro: "James brings over 15 years of experience and a passion for creative hair design. His warm approach makes every visit special.",
+    img: `/${templateName}/hairDresser2.jpg`,
+  },
+  {
+    name: "Emily Brooks",
+    role: "Beauty Therapist",
+    intro: "Emily’s gentle touch and knowledge of beauty treatments ensure a relaxing, uplifting experience in our unique church setting.",
+    img: `/${templateName}/hairDresser3.jpg`,
+  },
+];
 
 const collageUrl = `url(/${templateName}/harlandsCollage.jpg)`;
 
@@ -158,7 +180,6 @@ export const Config = () => {
             <Typography
               sx={{
                 color: black,
-                fontWeight: "bold",
                 mr: 0.5,
                 fontSize: { xs: "0.8rem", md: "1.3rem" },
                 textDecoration: "none",
@@ -217,6 +238,8 @@ export const Config = () => {
             color: "white",
             fontSize: { xs: "2rem", md: "3rem", lg: "5rem" },
             fontFamily: "Lexend",
+            //fontSize: { xs: "2rem", md: "4rem", lg: "6rem" },
+            //fontFamily: "Dancing Script",
             textShadow: `-${shadowOffset}px -${shadowOffset}px 0 #000, ${shadowOffset}px -${shadowOffset}px 0 #000, -${shadowOffset}px ${shadowOffset}px 0 #000, ${shadowOffset}px ${shadowOffset}px 0 #000;`,
             zIndex: 2, // Ensure text is above the overlay
           }}
@@ -244,7 +267,7 @@ export const Config = () => {
               {paragraph}
             </Typography>
           ))}
-          <Typography variant="h4" sx={{ mb: 2 }}>
+          <Typography variant="h4" sx={{ mb: 2, fontWeight: "bold" }}>
             Our Prices
           </Typography>
           <Stack
@@ -308,6 +331,9 @@ export const Config = () => {
             </Stack>
           </Stack>
         </Stack>
+
+        <ReviewSection />
+        
         <Box
           sx={{
             margin: "auto",
@@ -319,6 +345,9 @@ export const Config = () => {
             backgroundPosition: "center",
           }}
         ></Box>
+
+        <TeamMembers team={team}/>
+
         <Stack
           ref={contactSectionRef}
           sx={{

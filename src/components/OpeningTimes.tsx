@@ -37,7 +37,7 @@ export const OpeningTimes = ({ sx, openingTimes }: OpeningTimesProps) => {
         ...sx,
       }}
     >
-      <Typography variant="h5" sx={{ mb: {xs: 0, md: 1, lg: 2}, textAlign: "center" }}>
+      <Typography variant="h5" sx={{ mb: {xs: 0, md: 1, lg: 2}, textAlign: "center", fontWeight: "bold" }}>
         Opening Times
       </Typography>
       <Table>
